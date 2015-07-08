@@ -25,8 +25,8 @@ public class Todo implements Serializable, Comparable<Todo> {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @GeneratedValue(generator = "system-uuid")
     private String todoId;
 
     @ManyToOne

@@ -20,8 +20,8 @@ import java.util.Set;
 @Table(name = "tuser")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @NamedQueries( {
-        @NamedQuery(name = "User.getNumberOfUsers", query = "SELECT COUNT(user) FROM User user"),
-        @NamedQuery(name = "User.findUsersByLogin", query = "SELECT user FROM User user where user.login LIKE :login") })
+        @NamedQuery(name = "User.getNumberOfUsers", query = "SELECT COUNT(u) FROM User u"),
+        @NamedQuery(name = "User.findUsersByLogin", query = "SELECT u FROM User u where u.login LIKE :login") })
 public class User implements Serializable, Comparable<User> {
 
     /**
