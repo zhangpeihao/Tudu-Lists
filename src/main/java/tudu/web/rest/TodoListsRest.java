@@ -25,24 +25,10 @@ public class TodoListsRest {
 
     @Autowired
     private UserService userService;
-    
-    @ModelAttribute("user")
-    public User formBackingObject() {
-        User user = userService.getCurrentUser();
-        user.setVerifyPassword(user.getPassword());
-        return user;
-    }
 
     @Autowired
     private TodoListsService todoListsService;
-    
-    /**
-     * Display the "my user info" page.
-     */
-    @RequestMapping(method = RequestMethod.GET)
-    public String display() {
-        return "account";
-    }
+
 
     @RequestMapping(value = "/lists.json", method = RequestMethod.GET)
     public Collection<TodoList> lists() {
